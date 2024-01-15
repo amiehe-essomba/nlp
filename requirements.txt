@@ -99,3 +99,4 @@ babel==2.13.1
 transformers>=4.35.0
 torch==2.0.1
 sentencepiece==0.1.99
+emoji==2.9.0
