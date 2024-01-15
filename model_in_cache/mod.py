@@ -103,7 +103,7 @@ def read_models(list_of_models : list = ["NMT.keras", "NER.keras", 'siamense.ker
             tokenizer   = AutoTokenizer.from_pretrained('./models/HF_QA_FT/')
             Models['HF_QA_T'] = tokenizer
         else:
-            model = pipeline("question-answering", model="distilbert-base-cased-distilled-squad", tokenizer="bert-base-cased")
+            model = pipeline("question-answering", model="distilbert-base-cased-distilled-squad")
             #model = pipeline(task="question-answering", model="./models/HF_QA/") 
 
         Models[names.split('.')[0]] = model

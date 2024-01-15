@@ -272,7 +272,7 @@ def nmt_header(st : streamlit):
         st.write('status', True if sep else False)
     
     with col3:
-        ner = st.checkbox(label="Analyse TEXT with NER", disabled=True)
+        ner = st.checkbox(label="Analyze TEXT with NER", disabled=True)
         st.write('status', True if ner else False)
 
     text = '21th of August 2016'
