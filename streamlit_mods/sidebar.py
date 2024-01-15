@@ -113,6 +113,7 @@ def sidebar(streamlit = st):
         unsafe_allow_html=True
         )
     
+    """
     for i in range(3):
         streamlit.sidebar.write('')
 
@@ -131,6 +132,7 @@ def sidebar(streamlit = st):
         f'</div>',
         unsafe_allow_html=True
     )
+    """
    
     
     return contain_feedback
