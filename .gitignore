@@ -151,6 +151,11 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+siamense/**
+siamense_weights/**
+HF_QA_FT/**
+*.keras
+NMT_W.h5
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
