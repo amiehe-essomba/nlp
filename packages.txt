@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:20970393b0542657df6635f812ea841b4704a8fe32359b55aedc75eec87555b0
-size 59
+unixodbc-dev
+libgl1-mesa-glx
+freeglut3-dev
+libgtk2.0-dev
