@@ -383,8 +383,7 @@ def huggingface(st : streamlit):
     c1, c2 = st.columns(2)
 
     with c1:
-        task = st.selectbox('HuggingFace Task', ('Quetion Answering', 
-                    'Named Entity Recognition', 'Sentiment Analysis'), index=0)
+        task = st.selectbox('HuggingFace Task', ('Quetion Answering', 'Sentiment Analysis'), index=0) #'Named Entity Recognition',
         st.write('state', True if task else False)
     
     with c2:

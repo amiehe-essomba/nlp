@@ -70,7 +70,7 @@ def read_senquences():
 
 def read_models(list_of_models : list = ["NMT.keras", "NER.keras", 'siamense.keras', 
                 'emojify.h5', 'HF_QA.HF', 'HF_QA_FT.HF', 
-                "HF_NER.HF", "HF_SA.HF"], machine_vocab = None):
+                "HF_SA.HF"], machine_vocab = None): #"HF_NER.HF",
     Models = {}
 
     for names in list_of_models:
@@ -94,7 +94,7 @@ def read_models(list_of_models : list = ["NMT.keras", "NER.keras", 'siamense.ker
             tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
             model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
             Models['HF_SA_T'] = tokenizer
-        elif names == 'HF_NER.HF':
+        elif names == 'HF_NER.HF1':
             tokenizer = BertTokenizer.from_pretrained("dbmdz/bert-large-cased-finetuned-conll03-english")
             model = BertForTokenClassification.from_pretrained("dbmdz/bert-large-cased-finetuned-conll03-english")
             Models['HF_NER_T'] = tokenizer
