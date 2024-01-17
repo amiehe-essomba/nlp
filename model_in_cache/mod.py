@@ -91,19 +91,36 @@ def read_models(list_of_models : list = ["NMT.keras", "NER.keras", 'siamense.ker
         elif names == 'emojify.h5':
             model = tf.keras.models.load_model(f"./models/{names}", compile=True)    
         elif names == 'HF_SA.HF':
+            """
             tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
             model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
             Models['HF_SA_T'] = tokenizer
+            model = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
+            model.save_pretrained("./models/HF_SA/")
+            """
+            model       = DistilBertForSequenceClassification.from_pretrained("./models/HF_SA/")
+            tokenizer   = DistilBertTokenizer.from_pretrained("./models/HF_SA/")
+            Models['HF_SA_T'] = tokenizer
+
         elif names == 'HF_NER.HF1':
             tokenizer = BertTokenizer.from_pretrained("dbmdz/bert-large-cased-finetuned-conll03-english")
             model = BertForTokenClassification.from_pretrained("dbmdz/bert-large-cased-finetuned-conll03-english")
             Models['HF_NER_T'] = tokenizer
+
         elif names == 'HF_QA_FT.HF':
             model       = AutoModelForQuestionAnswering.from_pretrained('./models/HF_QA_FT/')
             tokenizer   = AutoTokenizer.from_pretrained('./models/HF_QA_FT/')
             Models['HF_QA_T'] = tokenizer
+
         else:
-            model = pipeline("question-answering", model="distilbert-base-cased-distilled-squad")
+            """
+            model = pipeline(task="question-answering", model = "distilbert-base-cased-distilled-squad")
+            model.save_pretrained("./models/HF_QA/")
+            """
+            model       = AutoModelForQuestionAnswering.from_pretrained("./models/HF_QA/")
+            tokenizer   = AutoTokenizer.from_pretrained("./models/HF_QA/")
+            model = pipeline(task="question-answering", model = model, tokenizer=tokenizer)
+            
 
         Models[names.split('.')[0]] = model
 
