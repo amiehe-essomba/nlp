@@ -69,8 +69,7 @@ def read_senquences():
     return train_sentences
 
 def read_models(list_of_models : list = ["NMT.keras", "NER.keras", 'siamense.keras', 
-                'emojify.h5', 'HF_QA.HF1', 'HF_QA_FT.HF', 
-                "HF_SA.HF1"], machine_vocab = None): #"HF_NER.HF",
+                'emojify.h5', 'HF_QA_FT.HF'], machine_vocab = None): 
     Models = {}
 
     for names in list_of_models:
@@ -111,16 +110,17 @@ def read_models(list_of_models : list = ["NMT.keras", "NER.keras", 'siamense.ker
             model       = AutoModelForQuestionAnswering.from_pretrained('./models/HF_QA_FT/')
             tokenizer   = AutoTokenizer.from_pretrained('./models/HF_QA_FT/')
             Models['HF_QA_T'] = tokenizer
-
+        
+        """
         else:
-            """
+            
             model = pipeline(task="question-answering", model = "distilbert-base-cased-distilled-squad")
             model.save_pretrained("./models/HF_QA/")
-            """
+        
             model       = AutoModelForQuestionAnswering.from_pretrained("./models/HF_QA/")
             tokenizer   = AutoTokenizer.from_pretrained("./models/HF_QA/")
             model = pipeline(task="question-answering", model = model, tokenizer=tokenizer)
-            
+        """
 
         Models[names.split('.')[0]] = model
 
