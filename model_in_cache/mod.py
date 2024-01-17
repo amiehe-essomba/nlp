@@ -69,8 +69,8 @@ def read_senquences():
     return train_sentences
 
 def read_models(list_of_models : list = ["NMT.keras", "NER.keras", 'siamense.keras', 
-                'emojify.h5', 'HF_QA.HF', 'HF_QA_FT.HF', 
-                "HF_SA.HF"], machine_vocab = None): #"HF_NER.HF",
+                'emojify.h5', 'HF_QA.HF1', 'HF_QA_FT.HF', 
+                "HF_SA.HF1"], machine_vocab = None): #"HF_NER.HF",
     Models = {}
 
     for names in list_of_models:

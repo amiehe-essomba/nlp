@@ -38,8 +38,7 @@ def sidebar(streamlit = st):
         #"Text Summarization",
         "Question Answering With T5", 
         "Question Duplicates",
-        'Sentiment Analysis', 
-        'BERT & HuggingFace'
+        'Sentiment Analysis'#, 'BERT & HuggingFace'
         )
     
     styles = {
